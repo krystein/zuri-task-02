@@ -23,13 +23,15 @@ const MovieLabel = ({ name, backgroundImage, date, overview, runtime }) => {
           style={{ width: "100px" }}
         />
       </div>
-      <div className="d-flex">
-        <h6 data-testid="movie-title">{name}</h6>
+      <div className="d-flex" style={{ gap: "20px", fontWeight: 700 }}>
+        <p data-testid="movie-title">{name}</p>
         <p data-testid="movie-release-date">{date}</p>
         <p data-testid="movie-runtime">{runtime}min</p>
       </div>
 
-      <p data-testid="movie-overview">{overview}</p>
+      <p data-testid="movie-overview" className="text-black-50">
+        {overview}
+      </p>
     </div>
   );
 };

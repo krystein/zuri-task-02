@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //import components
 import { menuData } from "../data/MenuData";
@@ -34,13 +35,15 @@ const Sidebar = ({ setDisplayItem }) => {
       }}
     >
       <SideMenu>
-        <div
-          className="d-flex align-items-center"
-          style={{ color: "#fff", gap: "20px" }}
-        >
-          <img src={Img} alt="" className="img-fluid" />
-          <p style={{ margin: "0", color: "#000" }}>MovieBox</p>
-        </div>
+        <Link to={`/`} style={{ textDecoration: "none" }}>
+          <div
+            className="d-flex align-items-center"
+            style={{ color: "#fff", gap: "20px" }}
+          >
+            <img src={Img} alt="" className="img-fluid" />
+            <p style={{ margin: "0", color: "#000" }}>MovieBox</p>
+          </div>
+        </Link>
         {menuData.map((item, index) => {
           return (
             <SideLink
