@@ -48,7 +48,7 @@ const CloseIcon = styled(FaTimes)`
   color: #000d1a;
 `;
 const Content = styled.div`
-  margin-left: 25%;
+  margin-left: 15%;
   position: relative;
   z-index: -1;
   width: 100vw;
@@ -57,7 +57,7 @@ const Content = styled.div`
   }
 `;
 const Contents = styled.div`
-  width: 25%;
+  width: 15%;
   height: 100vh;
   display: grid;
   align-items: center;
@@ -98,7 +98,7 @@ function MovieDetails({ toggle, isOpen }) {
   return (
     <Container>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Contents className="p-3">
+      <Contents className="">
         {isOpen && (
           <Icon>
             <CloseIcon onClick={toggle} />

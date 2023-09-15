@@ -51,18 +51,22 @@ const SideBar = styled(FaBars)`
 const SideMenu = styled.div`
   display: grid;
   align-items: center;
+  grid-template-row: 1fr 1fr 1fr 1fr;
   @media Screen and (max-width: 1200px) {
     display: none;
   }
 `;
 
-const Sidebar = ({ setDisplayItem, toggle }) => {
+const Sidebar = ({ toggle }) => {
   return (
     <div
       style={{
         height: "100vh",
-        position: "fixed",
+        border: "1px solid grey",
+        borderRadius: "0px 40px 40px 0px",
+        borderleft: "none",
       }}
+      className="p-5"
     >
       <div className="d-flex justify-content-between align-items-center">
         <Link to={`/`} style={{ textDecoration: "none" }}>
@@ -79,13 +83,7 @@ const Sidebar = ({ setDisplayItem, toggle }) => {
       <SideMenu>
         {menuData.map((item, index) => {
           return (
-            <SideLink
-              to={item.link}
-              key={index}
-              onClick={() => {
-                setDisplayItem(item.ref);
-              }}
-            >
+            <SideLink to={item.link} key={index}>
               {item.title}
             </SideLink>
           );
