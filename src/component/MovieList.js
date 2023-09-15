@@ -1,5 +1,6 @@
 import React from "react";
 import Movies from "./Movie";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const MovieList = ({ filteredMovie, loading }) => {
   return (
@@ -12,16 +13,8 @@ const MovieList = ({ filteredMovie, loading }) => {
           </a>
         </h4>
       </div>
-      <div className="container d-flex justify-content-center">
-        <div
-          className=""
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr 1fr",
-            rowGap: "20px",
-            columnGap: "20px",
-          }}
-        >
+      <div className="container row justify-content-center">
+        <div className="row" style={{ justifyContent: "center" }}>
           {loading ? (
             <p>Loading...</p>
           ) : (

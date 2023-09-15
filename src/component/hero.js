@@ -5,6 +5,7 @@ import Img1 from "../img/PngItem_1381056 1.svg";
 import Img2 from "../img/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@ 1.svg";
 import styled from "styled-components";
 import Navbar from "./navbar";
+import Button from "./Button";
 
 const Herosection = styled.section`
   height: 70vh;
@@ -17,13 +18,13 @@ const Herosection = styled.section`
   background-repeat: no-repeat;
 `;
 const HeroWrapper = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-itmes: center:
-overflow: hidden;
-position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-itmes: center:
+  overflow: hidden;
+  position: relative;
 `;
 const HeroSlide = styled.div`
   position: absolute;
@@ -49,8 +50,7 @@ const Herocontent = styled.div`
   position: relative;
   z-index: 10;
   display: grid;
-  max-width: 1600px;
-  width: 35%;
+  width: 50%;
   color: #fff;
   justify-content: center;
   h1 {
@@ -75,12 +75,12 @@ const Herocontent = styled.div`
   }
 `;
 
-const Hero = ({ handleChange }) => {
+const Hero = ({ handleChange, search, performMovieSearch }) => {
   return (
     <Herosection>
       <HeroWrapper className="container p-2">
-        <Navbar handleChange={handleChange} />
-        <HeroSlide>
+        <Navbar handleChange={handleChange} search={search} />
+        <HeroSlide className="p-3">
           <Herocontent>
             <h3>John Wick 3 : Parabellum</h3>
             <div className="d-flex align-items-center" style={{ gap: "20px" }}>
@@ -99,11 +99,14 @@ const Hero = ({ handleChange }) => {
                 <p style={{ margin: "0" }}>86.0 / 100</p>
               </div>
             </div>
-            <p className="text-align" style={{ margin: "0" }}>
+            <p className="text-align text-break" style={{ margin: "0" }}>
               John Wick is on the run after killing a member of the
               international assassins' guild, and with a $14 million price tag
               on his head, he is the target of hit men and women everywhere.
             </p>
+            <Button type="submit" style={{ background: "#BE123C" }}>
+              Watch Now!
+            </Button>
           </Herocontent>
         </HeroSlide>
       </HeroWrapper>

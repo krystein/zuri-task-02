@@ -14,6 +14,11 @@ const Nav = styled.div`
 const NavMenu = styled.div`
   align-items: center;
   color: #fff;
+  @media screen and (max-width: 1200px) {
+    p {
+      display: none;
+    }
+  }
 `;
 
 const CustomInput = styled.input`
@@ -25,11 +30,11 @@ const CustomInput = styled.input`
   }
 `;
 
-const Navbar = ({ handleChange }) => {
+const Navbar = ({ handleChange, search }) => {
   return (
     <Nav>
-      <NavMenu className="row" style={{ justifyContent: "space-between" }}>
-        <div className="col">
+      <NavMenu className="row">
+        <div className="col ">
           <div
             className="d-flex align-items-center"
             style={{ color: "#fff", gap: "20px" }}
@@ -38,39 +43,31 @@ const Navbar = ({ handleChange }) => {
             <p style={{ margin: "0" }}>MovieBox</p>
           </div>
         </div>
-        <div className="col-5">
-          <div className="input-group">
-            <CustomInput
-              style={{
-                background: "transparent",
-                borderRight: "none",
-                transistion: "none",
-                color: "#fff",
-              }}
-              type="text"
-              placeholder="what do you want to watch"
-              className="form-control"
-              onChange={handleChange}
-            />
-            <div className="input-group-append">
-              <button
-                className="form-control"
-                type="button"
+        <div className="col" style={{ justifyContent: "center" }}>
+          <form>
+            <div className="input-group">
+              <CustomInput
                 style={{
-                  borderRadius: "0px 5px 5px 0px",
-                  borderLeft: "none",
                   background: "transparent",
+                  transistion: "none",
                   color: "#fff",
                 }}
+                type="text"
+                placeholder="what do you want to watch"
+                className="form-control-lg"
+                value={search}
                 onChange={handleChange}
-              >
-                search
-              </button>
+              />
             </div>
-          </div>
+          </form>
         </div>
         <div className="col d-flex justify-content-end">
-          <p style={{ margin: "0" }}>Sign in</p>
+          <a
+            href="/"
+            style={{ margin: "0", textDecoration: "none", color: "pink" }}
+          >
+            Sign in
+          </a>
         </div>
       </NavMenu>
     </Nav>

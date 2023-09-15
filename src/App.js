@@ -11,6 +11,7 @@ function App() {
   const [movies, setMovie] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     axios
       .get(
@@ -30,13 +31,12 @@ function App() {
     setSearch(e.target.value);
   };
 
-  if (!handleChange) {
-    return <div>Loading...</div>;
-  }
-
   const filteredMovie = _.filter(movies, (movie) => {
     return movie.original_title.toLowerCase().includes(search.toLowerCase());
   });
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Router className="">
       <div>
@@ -52,7 +52,10 @@ function App() {
               />
             }
           />
-          <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route
+            path="/movie/:id"
+            element={<MovieDetails toggle={toggle} isOpen={isOpen} />}
+          />
         </Routes>
       </div>
     </Router>

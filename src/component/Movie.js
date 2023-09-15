@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Movies = ({ id, name, image, date }) => {
   return (
-    <div className="p-2 card" data-testid="Card">
+    <div className="col-sm-3 col-md-3 col-lg-3 p-2 card" data-testid="Card">
       <Link to={`/movie/${id}`} style={{ textDecoration: "none" }}>
         <div className="">
           <img
